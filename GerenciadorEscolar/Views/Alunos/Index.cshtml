@@ -1,0 +1,70 @@
+﻿@model IEnumerable<GerenciadorEscolar.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Alunos</h1>
+
+<p>
+    <a class="btn btn-outline-primary" asp-action="Create">Adicionar</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota4)
+            </th>
+           <!-- <th>
+                @Html.DisplayNameFor(model => model.Media)
+            </th>-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota4)
+            </td>
+            <!--<td>
+               // @Html.DisplayFor(modelItem => item.Media)
+            </td>-->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
