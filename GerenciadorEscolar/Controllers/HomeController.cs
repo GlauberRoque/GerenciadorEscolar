@@ -18,6 +18,11 @@ namespace GerenciadorEscolar.Controllers
             return View();
         }
 
+        public IActionResult Aviso()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

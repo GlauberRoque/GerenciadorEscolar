@@ -22,8 +22,13 @@ namespace GerenciadorEscolar.Controllers
         }
 
         
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string turma)
         {
+            if (turma != null)
+            {
+                return View(await _context.Alunos.Where(a => a.Turma == turma).ToListAsync());
+            }
+
             return View(await _context.Alunos.ToListAsync());
         }
 
